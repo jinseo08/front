@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>계산기</h2>
+    number1 : <input type="text" id="num1">
+    number2 : <input type="text" id="num2">
+    <button onclick= "cal()">계산</button>
+    <div id="result">여기에 계산결과를 출력</div>
+</body>
+<script>
+    function cal(){
+        let num1 = document.getElementById("num1").value;
+        let num2 = document.getElementById("num2").value;
+        //num1,num2가 문자타입으로 인식되기 때문에 parseInt로 숫자로 형변환
+        let sum = parseInt(num1) + parseInt(num2);
+        let cal = document.getElementById("result");
+        cal.innerHTML = sum;    
+    }
+</script>
+</html>
