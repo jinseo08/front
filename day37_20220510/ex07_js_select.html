@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id ="fruits" onchange="fruitSelect()">
+        <option value ="망고">망고</option>
+        <option value ="용과">용과</option>
+        <option value ="수박">수박</option>
+        <option value ="참외">참외</option>
+    </select>
+    <div id="result"></div>
+</body>
+    <script>
+        function fruitSelect(){
+            const fruits = document.getElementById("fruits").value;
+            const result = document.getElementById("result");
+            result.innerHTML = `선택한 과일은 ${fruits} 입니다.`
+        }
+    </script>
+</html>

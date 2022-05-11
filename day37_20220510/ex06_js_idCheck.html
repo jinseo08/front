@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <!--placeholder는 input박스에 써져있는거 글씨쓰면 사라짐 
+            onkeyup은 키보드 입력되면 실행 onblur은 입력칸을 벗어나면 실행--> 
+        <input type="text" onblur="usernamecheck()"class="from-control" placeholder="username" id = "username">
+        <p id="check-result">입력</p>
+    </div>
+</body>
+<script>
+    function usernamecheck(){
+        let user = document.getElementById("username").value;
+        console.log(user.length);
+        // username 글자수가 5~12자 이내면 "좋아요" 녹색으로
+        // 그렇지 않으면 "5~12자 이내로 입력해주세요" 빨간색으로
+        const print =  document.getElementById("check-result");
+        if(user.length >= 5 && user.length < 12){
+            print.innerHTML = "좋아요";
+            print.style.color ="green";
+        }else if(user.length == 0){
+            print.innerHTML = "필수입력입니다";
+            print.style.color = "red"
+        }else{
+            print.innerHTML = "다시입력";
+            print.style.color = "red"
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    점수 : <input type="text" id="score">
+    <button onclick="fun1()">성적계산</button>
+    <div id="result"> 성적 출력 </div>
+</body>
+<script>
+    function fun1(){
+        let score = document.getElementById("score").value;
+        console.log(score);
+        let grade;
+        if(score >= 90 && score <= 100){
+            grade = "A";
+        }else if(score >= 80 && score < 90){
+            grade = "B";
+        } else if(score < 80 && score >= 0){
+            grade = "F";
+        }else {
+            grade = "점수를 다시 입력해주세요"
+        }
+        let print = document.getElementById("result");
+        print.innerHTML = grade;    
+    }
+</script>
+</html>
